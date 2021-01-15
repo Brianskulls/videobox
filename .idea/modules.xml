@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../Prive/Portfolio-New/portfolio/.idea/portfolio.iml" filepath="$PROJECT_DIR$/../../../Prive/Portfolio-New/portfolio/.idea/portfolio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/videobox.iml" filepath="$PROJECT_DIR$/.idea/videobox.iml" />
+    </modules>
+  </component>
+</project>
