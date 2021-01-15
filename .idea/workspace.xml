@@ -2,10 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7fbcac6-79b8-41dd-850f-d5a2bff1f165" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/videobox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/videobox.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthGates.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/StoreTaskRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/StoreUserRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateTaskRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateUserRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Permission.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Task.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_15_101603_create_tasks_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_15_111924_create_roles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_15_112040_create_permissions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_15_112610_create_permission_role_pivot_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_15_112629_create_role_user_pivot_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/PermissionRoleTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/PermissionsTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/RoleUserTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/RolesTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/UsersTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/tasks/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/tasks/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/tasks/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/tasks/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/navigation-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,23 +174,32 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1n6B8VUGqbVhkkU8ITSwcKO7avr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/users" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/users" />
+      <recent name="$PROJECT_DIR$/resources/views/tasks" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -177,11 +217,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610700500479</updated>
-      <workItem from="1610700502272" duration="2767000" />
+      <workItem from="1610700502272" duration="13403000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
