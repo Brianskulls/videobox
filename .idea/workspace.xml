@@ -2,11 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7fbcac6-79b8-41dd-850f-d5a2bff1f165" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/StoreVideoRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateVideoRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Video.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_151500_create_videos_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/videos/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/videos/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/videos/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/videos/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/.idea/uploads.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/.idea/uploads.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/app/Http/Controllers/GetOnBoardingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/app/Http/Controllers/GetOnBoardingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/videobox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/videobox.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PermissionRoleTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PermissionRoleTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PermissionsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PermissionsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/navigation-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tasks/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tasks/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tasks/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tasks/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +175,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -168,6 +186,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Requests" />
+      <recent name="$PROJECT_DIR$/resources/views/videos" />
       <recent name="$PROJECT_DIR$/resources/views/users" />
       <recent name="$PROJECT_DIR$/resources/views/tasks" />
     </key>
@@ -189,7 +209,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610700500479</updated>
       <workItem from="1610700502272" duration="17734000" />
-      <workItem from="1610806339414" duration="2006000" />
+      <workItem from="1610806339414" duration="5951000" />
     </task>
     <servers />
   </component>

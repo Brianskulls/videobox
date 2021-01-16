@@ -26,4 +26,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('tasks', \App\Http\Controllers\TaskController::class);
 
     Route::resource('users', \App\Http\Controllers\UsersController::class);
+
+    Route::resource('videos', \App\Http\Controllers\VideoController::class);
 });
