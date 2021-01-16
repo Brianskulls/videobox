@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -17,6 +18,12 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use LogsActivity;
+
+    //Settings for Laravel/Activitylog
+    protected static $logAttributes = ["*"]; //What attributes to track
+    protected static $logFillable = true;    //Should attributes in the fillable array be tracked
+    protected static $logOnlyDirty = true;   //Only track differences between old and new
 
     /**
      * The attributes that are mass assignable.

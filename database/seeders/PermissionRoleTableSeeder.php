@@ -11,7 +11,7 @@ class PermissionRoleTableSeeder extends Seeder
     public function run()
     {
         // Admin has Users and Tasks tab
-        Role::findOrFail(1)->permissions()->attach([1, 2]);
+        Role::findOrFail(1)->permissions()->attach([1, 2, 4]);
         // User has Tasks tab
         Role::findOrFail(2)->permissions()->attach([2]);
         // Reporter has Tasks and Video tab

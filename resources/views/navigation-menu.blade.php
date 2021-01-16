@@ -16,6 +16,13 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+                @can('video_access')
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('videos.index') }}" :active="request()->routeIs('videos.*')">
+                            Videos
+                        </x-jet-nav-link>
+                    </div>
+                @endcan
                 @can('task_access')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
@@ -30,13 +37,14 @@
                         </x-jet-nav-link>
                     </div>
                 @endcan
-                @can('video_access')
+                @can('activity_logs_access')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('videos.index') }}" :active="request()->routeIs('users.*')">
-                            Videos
+                        <x-jet-nav-link href="{{ route('activity-logs.index') }}" :active="request()->routeIs('activity-logs.*')">
+                            User logs
                         </x-jet-nav-link>
                     </div>
                 @endcan
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

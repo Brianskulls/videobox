@@ -28,4 +28,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', \App\Http\Controllers\UsersController::class);
 
     Route::resource('videos', \App\Http\Controllers\VideoController::class);
+
+    Route::resource('activity-logs', \App\Http\Controllers\ActivityLogsController::class);
+
+    Route::get('/activity-logs-ajax', [\App\Http\Controllers\ActivityLogsController::class, 'indexAjax']);
 });

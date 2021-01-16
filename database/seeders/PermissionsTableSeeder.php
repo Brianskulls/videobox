@@ -22,6 +22,10 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 3,
                 'title' => 'video_access',
             ],
+            [
+                'id'    => 4,
+                'title' => 'activity_logs_access',
+            ]
         ];
 
         Permission::insert($permissions);
