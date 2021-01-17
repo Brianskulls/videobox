@@ -37,13 +37,13 @@ class ActivityLogsController extends Controller
                 // constraint on the causer relation (User)
                 $q->whereRaw('LOWER(`name`) = ?',[$name]) //Where name of User is the incoming name
                 ->orWhereRaw("LOWER(`previous_names`) LIKE CONCAT('%\"', ?, '\"%')",[$name]); //Or any previous name of User is the incoming name
-            })->with('causer','subject')->get(); //Add the causer and subject to the end result so view can get relations
+            })->with('causer','subject','causer.roles')->get(); //Add the causer and subject to the end result so view can get relations
 
 
             return $activityLogs->toJSON();
         }
 
-        $activityLogs = Activity::with('causer', 'subject')->get();
+        $activityLogs = Activity::with('causer', 'subject','causer.roles')->get();
         return $activityLogs->toJSON();
     }
 }

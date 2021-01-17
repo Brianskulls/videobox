@@ -14,24 +14,6 @@
                             <input oninput="updateTable()"
                                 class="w-full h-16 px-3 rounded mb-8 focus:outline-none focus:shadow-outline text-xl px-8 shadow-lg"
                                 type="search" placeholder="Search usernames..." id="search">
-                            <nav class="flex">
-                                <a class="no-underline text-white py-3 px-4 font-medium mr-3 bg-indigo hover:bg-indigo-darker"
-                                   href="#">Cardamom</a>
-                                <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo-darker hover:bg-indigo"
-                                   href="#">Cinnamon</a>
-                                <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo hover:bg-indigo-darker"
-                                   href="#">Chamomille</a>
-                                <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo-darker hover:bg-indigo"
-                                   href="#">Apple</a>
-                                <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo hover:bg-indigo-darker"
-                                   href="#">Mint</a>
-                                <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo-darker hover:bg-indigo"
-                                   href="#">Curry</a>
-                                <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo hover:bg-indigo-darker"
-                                   href="#">Fragrance</a>
-                                <a class="no-underline text-white py-3 px-4 font-medium ml-auto bg-indigo-darker hover:bg-indigo"
-                                   href="#">Amchoor</a>
-                            </nav>
                         </div>
                     </section>
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -39,17 +21,29 @@
                             <table class="min-w-full divide-y divide-gray-200 w-full">
                                 <thead>
                                 <tr>
+                                    <th scope="col"
+                                        class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        ID
+                                    </th>
                                     <th scope="col" width="50"
                                         class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Username
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Old names
                                     </th>
                                     <th scope="col" width="50"
                                         class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Role
                                     </th>
                                     <th scope="col"
-                                        class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style="border-left: 1px solid #e5e7eb;">
                                         Subject type
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        ID
                                     </th>
                                     <th scope="col"
                                         class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -59,10 +53,6 @@
                                         class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Datetime
                                     </th>
-                                    <th scope="col"
-                                        class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Old names
-                                    </th>
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200 data-table">
@@ -70,26 +60,13 @@
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                             @if($log->causer !== null)
-                                                {{ $log->causer->name }}
+                                                {{ $log->causer->id }}
                                             @endif
                                         </td>
-
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                Test
-                                            </span>
-                                        </td>
-
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $log->subject_type }}
-                                        </td>
-
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $log->description }}
-                                        </td>
-
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $log->created_at }}
+                                            @if($log->causer !== null)
+                                                {{ $log->causer->name }}
+                                            @endif
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -100,6 +77,32 @@
                                             </span>
                                                 @endforeach
                                             @endif
+                                        </td>
+
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            @if($log->causer !== null)
+                                                @foreach ($log->causer->roles as $role)
+                                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        {{ $role->title }}
+                                                    </span>
+                                                @endforeach
+                                            @endif
+                                        </td>
+
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900" style="border-left: 1px solid #e5e7eb;">
+                                            {{ $log->subject_type }}
+                                        </td>
+
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            {{ $log->subject_id }}
+                                        </td>
+
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            {{ ucfirst($log->description) }}
+                                        </td>
+
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            {{ $log->created_at }}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -147,8 +150,15 @@
                 let name = null;
                 if(log.causer  === null) {name = ''} else {name = log.causer.name}
 
+                //Username
+                let id = null;
+                if(log.causer  === null) {id = ''} else {id = log.causer.id}
+
                 //Subject type
                 let subjectType = log.subject_type;
+
+                //Subject id
+                let subjectId = log.subject_id;
 
                 //Action type
                 let actionType = log.description;
@@ -170,29 +180,37 @@
 
                 let str = '<tr>\n' +
                     '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
+                    '                                        ' + id + '\n' +
+                    '                                        </td>\n' +
+                    '\n' +
+                    '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
                     '                                        ' + name + '\n' +
                     '                                        </td>\n' +
                     '\n' +
+                    '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
+                    '                                        ' + oldNamesString + '\n' +
+                    '                                        </td>\n' +
                     '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
                     '                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">\n' +
                     '                                                Test\n' +
                     '                                            </span>\n' +
                     '                                        </td>\n' +
                     '\n' +
-                    '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
+                    '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900" style="border-left: 1px solid #e5e7eb;">\n' +
                     '                                        ' + subjectType + '\n' +
                     '                                        </td>\n' +
                     '\n' +
                     '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
-                    '                                        ' + actionType + '\n' +
+                    '                                        ' + subjectId + '\n' +
+                    '                                        </td>\n' +
+                    '\n' +
+                    '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
+                    '                                        ' + capitalize(actionType) + '\n' +
                     '                                        </td>\n' +
                     '\n' +
                     '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
                     '                                        ' + dateTime + '\n' +
-                    '                                        </td>\n' +
-                    '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
-                    '                                        ' + oldNamesString + '\n' +
-                    '                                        </td>'
+                    '                                        </td>' +
                     '                                    </tr>'
 
                 endStr += str;
@@ -201,7 +219,9 @@
             tableEl.innerHTML = endStr;
         }
 
-
+        function capitalize(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
     </script>
 
 </x-app-layout>
