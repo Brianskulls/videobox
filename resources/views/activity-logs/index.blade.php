@@ -41,7 +41,7 @@
                                 <tr>
                                     <th scope="col" width="50"
                                         class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Name
+                                        Username
                                     </th>
                                     <th scope="col" width="50"
                                         class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -58,6 +58,10 @@
                                     <th scope="col"
                                         class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Datetime
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Old names
                                     </th>
                                 </tr>
                                 </thead>
@@ -86,6 +90,16 @@
 
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                             {{ $log->created_at }}
+                                        </td>
+
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            @if($log->causer !== null)
+                                                @foreach(json_decode($log->causer->previous_names) as $previousName)
+                                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                                {{ $previousName }}
+                                            </span>
+                                                @endforeach
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach
@@ -142,6 +156,18 @@
                 //Datetime
                 let dateTime = log.created_at;
 
+                let oldNamesString = '';
+                let oldNamesArray  = [];
+                if(log.causer  !== null) {oldNamesArray = JSON.parse(log.causer.previous_names)}
+
+                oldNamesArray.forEach(oldName => {
+                    oldNamesString +=
+                        '                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">\n' +
+                        '                                            ' + oldName + '\n' +
+                        '                                            </span>\n';
+                });
+
+
                 let str = '<tr>\n' +
                     '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
                     '                                        ' + name + '\n' +
@@ -164,7 +190,10 @@
                     '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
                     '                                        ' + dateTime + '\n' +
                     '                                        </td>\n' +
-                    '                                    </tr>';
+                    '                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">\n' +
+                    '                                        ' + oldNamesString + '\n' +
+                    '                                        </td>'
+                    '                                    </tr>'
 
                 endStr += str;
             });

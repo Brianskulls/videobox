@@ -32,9 +32,18 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user instanceof MustVerifyEmail) {
             $this->updateVerifiedUser($user, $input);
         } else {
+            $previousNames = json_decode($user['previous_names']);
+
+            if($user['name'] !== $input['name'])
+            {
+                $previousNames[] = $user['name'];
+            }
+
+
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
+                'previous_names' => json_encode($previousNames)
             ])->save();
         }
     }
@@ -48,10 +57,18 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
      */
     protected function updateVerifiedUser($user, array $input)
     {
+        $previousNames = json_decode($user['previous_names']);
+
+        if($user['name'] !== $input['name'])
+        {
+            $previousNames[] = $user['name'];
+        }
+
         $user->forceFill([
             'name' => $input['name'],
             'email' => $input['email'],
             'email_verified_at' => null,
+            'previous_names' => json_encode($previousNames)
         ])->save();
 
         $user->sendEmailVerificationNotification();
