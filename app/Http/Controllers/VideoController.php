@@ -34,15 +34,18 @@ class VideoController extends Controller
             'file' => 'bail|required|file|mimes:mp4,oog,webm',
         ]);
 
-        $fileName = time().'.'.$request->file('file')->extension();
+        $fileModel = new Video;
 
-        $request->file('file')->store('public/files');
+        if($request->file('file')) {
+            $fileName = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('file')->extension();
+            $filePath = $request->file('file')->storeAs('videos', $fileName, 'public');
 
-        Video::create([
-           'title' => $request->title,
-           'description' => $request->description,
-           'name' => $fileName,
-        ]);
+            $fileModel->title = $request->title;
+            $fileModel->name = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('file')->extension();
+            $fileModel->location = '/storage/' . $filePath;
+            $fileModel->description = $request->description;
+            $fileModel->save();
+        }
 
         return redirect()->route('videos.index');
     }

@@ -8,8 +8,12 @@
       <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/app/Http/Controllers/GetOnBoardingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/app/Http/Controllers/GetOnBoardingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/videobox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/videobox.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tasks/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tasks/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Video.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_151500_create_videos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_151500_create_videos_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +148,7 @@
       <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-activitylog" />
     </include_path>
   </component>
   <component name="ProjectId" id="1n6B8VUGqbVhkkU8ITSwcKO7avr" />
@@ -194,7 +199,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610700500479</updated>
       <workItem from="1610700502272" duration="17734000" />
-      <workItem from="1610806339414" duration="17006000" />
+      <workItem from="1610806339414" duration="19664000" />
     </task>
     <servers />
   </component>
