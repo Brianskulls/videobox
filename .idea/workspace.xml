@@ -8,9 +8,7 @@
       <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/app/Http/Controllers/GetOnBoardingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/app/Http/Controllers/GetOnBoardingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/videos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/videos/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/videos/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/videos/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +194,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610700500479</updated>
       <workItem from="1610700502272" duration="17734000" />
-      <workItem from="1610806339414" duration="21150000" />
+      <workItem from="1610806339414" duration="21501000" />
     </task>
     <servers />
   </component>

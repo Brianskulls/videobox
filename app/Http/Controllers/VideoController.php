@@ -31,7 +31,7 @@ class VideoController extends Controller
     public function store(StoreVideoRequest $request)
     {
         $request->validate([
-            'file' => 'bail|required|file|mimes:mp4,oog,webm',
+            'file' => 'bail|required|file|mimes:mp4,oog,webm|max:5242880',
         ]);
 
         $fileModel = new Video;
