@@ -6,6 +6,7 @@ use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -15,7 +16,9 @@ class TaskController extends Controller
     {
         abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $tasks = Task::all();
+        $user = Auth::user();
+
+        $tasks = Task::where('user_id',$user->id)->get();
 
         return view('tasks.index', compact('tasks'));
     }
@@ -29,7 +32,11 @@ class TaskController extends Controller
 
     public function store(StoreTaskRequest $request)
     {
-        Task::create($request->validated());
+        $user = Auth::user();
+
+        $task = new Task($request->validated());
+        $task->user()->associate($user);
+        $task->save();
 
         return redirect()->route('tasks.index');
     }
@@ -37,6 +44,7 @@ class TaskController extends Controller
     public function show(Task $task)
     {
         abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_unless($task->user_id === Auth::user()->id, Response::HTTP_FORBIDDEN, 'You may not view this task');
 
         return view('tasks.show', compact('task'));
     }
@@ -59,6 +67,7 @@ class TaskController extends Controller
     {
         abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+//        $task->unsetRelation(Auth::user());
         $task->delete();
 
         return redirect()->route('tasks.index');
