@@ -14,7 +14,7 @@ class AddPreviousNamesToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->json('previous_names');
+            $table->text('previous_names')->default('[]');
         });
     }
 
