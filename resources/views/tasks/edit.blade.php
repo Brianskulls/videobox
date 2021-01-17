@@ -8,13 +8,13 @@
     <div>
         <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="mt-5 md:mt-0 md:col-span-2">
-                <form method="post" action="{{ route('tasks.update', $video->id) }}">
+                <form method="post" action="{{ route('tasks.update', $task->id) }}">
                     @csrf
                     @method('PUT')
                     <div class="shadow overflow-hidden sm:rounded-md">
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="description" class="block font-medium text-sm text-gray-700">Description</label>
-                            <textarea name="description" id="description" cols="30" rows="10" class="form-input rounded-md shadow-sm mt-1 block w-full">{{ old('description', $video->description) }}</textarea>
+                            <textarea name="description" id="description" cols="30" rows="10" class="form-input rounded-md shadow-sm mt-1 block w-full">{{ old('description', $task->description) }}</textarea>
                             @error('description')
                             <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror

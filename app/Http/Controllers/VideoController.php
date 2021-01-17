@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateVideoRequest;
 use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
 class VideoController extends Controller
@@ -29,7 +30,19 @@ class VideoController extends Controller
 
     public function store(StoreVideoRequest $request)
     {
-        Video::create($request->validated());
+        $request->validate([
+            'file' => 'bail|required|file|mimes:mp4,oog,webm',
+        ]);
+
+        $fileName = time().'.'.$request->file('file')->extension();
+
+        $request->file('file')->store('public/files');
+
+        Video::create([
+           'title' => $request->title,
+           'description' => $request->description,
+           'name' => $fileName,
+        ]);
 
         return redirect()->route('videos.index');
     }
