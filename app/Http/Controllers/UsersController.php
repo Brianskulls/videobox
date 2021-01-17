@@ -34,6 +34,7 @@ class UsersController extends Controller
     {
         $user = User::create($request->validated());
         $user->roles()->sync($request->input('roles', []));
+        $user->previous_names = json_encode([]);
 
         return redirect()->route('users.index');
     }
