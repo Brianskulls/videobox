@@ -8,12 +8,7 @@
       <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/app/Http/Controllers/GetOnBoardingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/app/Http/Controllers/GetOnBoardingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../MMM/uploads/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MMM/uploads/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/videobox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/videobox.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_151500_create_videos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_151500_create_videos_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +194,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610700500479</updated>
       <workItem from="1610700502272" duration="17734000" />
-      <workItem from="1610806339414" duration="19664000" />
+      <workItem from="1610806339414" duration="21501000" />
     </task>
     <servers />
   </component>
