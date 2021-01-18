@@ -44,6 +44,18 @@
                         </x-jet-nav-link>
                     </div>
                 @endcan
+                @can('overviews_access')
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('overviews.reporter') }}" :active="request()->routeIs('overviews.reporter')">
+                            Videos per reporter
+                        </x-jet-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('overviews.subject') }}" :active="request()->routeIs('overviews.subject')">
+                            Videos per subject
+                        </x-jet-nav-link>
+                    </div>
+                @endcan
 
             </div>
 

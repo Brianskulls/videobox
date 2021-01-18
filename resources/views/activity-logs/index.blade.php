@@ -14,6 +14,9 @@
                             <input oninput="updateTable()"
                                 class="w-full h-16 px-3 rounded mb-8 focus:outline-none focus:shadow-outline text-xl px-8 shadow-lg"
                                 type="search" placeholder="Search usernames..." id="search">
+                            <h4 class=" text-m text-gray-800 leading-tight">
+                                Typing in old usernames also works!
+                            </h4>
                         </div>
                     </section>
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">

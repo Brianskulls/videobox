@@ -32,4 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('activity-logs', \App\Http\Controllers\ActivityLogsController::class);
 
     Route::get('/activity-logs-ajax', [\App\Http\Controllers\ActivityLogsController::class, 'indexAjax']);
+
+    Route::get('/overviews/reporters', [\App\Http\Controllers\OverviewsController::class, 'reporters']);
+    Route::get('/overviews/subjects', [\App\Http\Controllers\OverviewsController::class, 'subjects']);
 });
