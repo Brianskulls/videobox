@@ -16,9 +16,20 @@ class OverviewsController extends Controller
 {
     public function reporters()
     {
-        abort_if(Gate::denies('activity_logs_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('overviews_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('activity-logs.index', compact('activityLogs'));
+        $type = 'reporter';
+        return view('overview.index', get_defined_vars());
+    }
+
+    public function subjects()
+    {
+        abort_if(Gate::denies('overviews_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+
+
+        $type = 'subject';
+        return view('overview.index', get_defined_vars());
     }
 
 }
