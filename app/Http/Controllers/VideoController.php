@@ -19,7 +19,13 @@ class VideoController extends Controller
 
         $user = Auth::user();
 
-        $videos = Video::where('user_id',$user->id)->get();
+        if (Gate::allows('user_access')) {
+            $videos = Video::all();
+        }
+
+        elseif (Gate::allows('reporter_access')) {
+            $videos = Video::where('user_id',$user->id)->get();
+        }
 
         return view('videos.index', compact('videos'));
     }

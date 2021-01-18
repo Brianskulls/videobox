@@ -34,6 +34,10 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 6,
                 'title' => 'overviews_access',
             ],
+            [
+                'id'    => 7,
+                'title' => 'reporter_access',
+            ],
         ];
 
         Permission::insert($permissions);
