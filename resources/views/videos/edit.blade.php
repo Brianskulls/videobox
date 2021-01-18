@@ -13,6 +13,13 @@
                     @method('PUT')
                     <div class="shadow overflow-hidden sm:rounded-md">
                         <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="title" class="block font-medium text-sm text-gray-700">Title</label>
+                            <input type="text" id="title" name="title" class="form-input rounded-md shadow-sm mt-1 block w-full" value="{{ old('title', $video->title) }}">
+                            @error('title')
+                            <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="description" class="block font-medium text-sm text-gray-700">Description</label>
                             <textarea name="description" id="description" cols="30" rows="10" class="form-input rounded-md shadow-sm mt-1 block w-full">{{ old('description', $video->description) }}</textarea>
                             @error('description')

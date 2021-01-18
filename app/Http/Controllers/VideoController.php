@@ -6,6 +6,7 @@ use App\Http\Requests\StoreVideoRequest;
 use App\Http\Requests\UpdateVideoRequest;
 use App\Models\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +17,9 @@ class VideoController extends Controller
     {
         abort_if(Gate::denies('video_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $videos = Video::all();
+        $user = Auth::user();
+
+        $videos = Video::where('user_id',$user->id)->get();
 
         return view('videos.index', compact('videos'));
     }
@@ -30,6 +33,8 @@ class VideoController extends Controller
 
     public function store(StoreVideoRequest $request)
     {
+        $user = Auth::user();
+
         $request->validate([
             'file' => 'bail|required|file|mimes:mp4,oog,webm|max:5242880',
         ]);
@@ -39,11 +44,11 @@ class VideoController extends Controller
         if($request->file('file')) {
             $fileName = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('file')->extension();
             $filePath = $request->file('file')->storeAs('videos', $fileName, 'public');
-
             $fileModel->title = $request->title;
             $fileModel->name = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('file')->extension();
             $fileModel->location = '/storage/' . $filePath;
             $fileModel->description = $request->description;
+            $fileModel->user()->associate($user);
             $fileModel->save();
         }
 
