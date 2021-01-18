@@ -57,7 +57,7 @@ class VideoController extends Controller
 
     public function show(Video $video)
     {
-        abort_if(Gate::denies('video_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('video_show_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('videos.show', compact('video'));
     }
