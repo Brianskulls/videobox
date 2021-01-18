@@ -18,6 +18,10 @@ class OverviewsController extends Controller
     {
         abort_if(Gate::denies('overviews_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+        $users = User::whereHas('roles', function($q) { //whereHas allows us to provide constraint on the role of User
+            $q->where('id','=',3);
+        })->with('videos')->get();
+
         $type = 'reporter';
         return view('overview.index', get_defined_vars());
     }
@@ -26,7 +30,10 @@ class OverviewsController extends Controller
     {
         abort_if(Gate::denies('overviews_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+        //get
+        //$subjects = DB::table('videos')->groupBy('subject')->get();
 
+        //dd($subjects);
 
         $type = 'subject';
         return view('overview.index', get_defined_vars());
