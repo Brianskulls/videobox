@@ -28,8 +28,12 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 5,
+                'title' => 'video_show_access',
+            ],
+            [
+                'id'    => 6,
                 'title' => 'overviews_access',
-            ]
+            ],
         ];
 
         Permission::insert($permissions);

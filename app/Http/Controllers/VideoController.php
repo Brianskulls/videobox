@@ -45,6 +45,7 @@ class VideoController extends Controller
             $fileName = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('file')->extension();
             $filePath = $request->file('file')->storeAs('videos', $fileName, 'public');
             $fileModel->title = $request->title;
+            $fileModel->subject = $request->subject;
             $fileModel->name = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('file')->extension();
             $fileModel->location = '/storage/' . $filePath;
             $fileModel->description = $request->description;
@@ -57,7 +58,7 @@ class VideoController extends Controller
 
     public function show(Video $video)
     {
-        abort_if(Gate::denies('video_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('video_show_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('videos.show', compact('video'));
     }

@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7fbcac6-79b8-41dd-850f-d5a2bff1f165" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_18_195034_add_userid_field_to_videos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/videobox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/videobox.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreVideoRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreVideoRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/videos/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/videos/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/videos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/videos/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_151500_create_videos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_151500_create_videos_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/videos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/videos/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +197,7 @@
       <updated>1610700500479</updated>
       <workItem from="1610700502272" duration="17734000" />
       <workItem from="1610806339414" duration="24464000" />
-      <workItem from="1610998706367" duration="1994000" />
+      <workItem from="1610998706367" duration="5564000" />
     </task>
     <servers />
   </component>
@@ -223,6 +220,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="229" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1610806323705" />
+    <state x="345" y="177" width="749" height="568" key="find.popup" timestamp="1611004574213">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="345" y="177" width="749" height="568" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1611004574213" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1610806484612">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
