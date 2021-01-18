@@ -33,6 +33,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/activity-logs-ajax', [\App\Http\Controllers\ActivityLogsController::class, 'indexAjax']);
 
-    Route::get('/overviews/reporters', [\App\Http\Controllers\OverviewsController::class, 'reporters']);
-    Route::get('/overviews/subjects', [\App\Http\Controllers\OverviewsController::class, 'subjects']);
+    Route::get('/overviews/reporters', [\App\Http\Controllers\OverviewsController::class, 'reporters'])->name('overview.reporters');
+    Route::get('/overviews/subjects', [\App\Http\Controllers\OverviewsController::class, 'subjects'])->name('overview.subjects');
 });
