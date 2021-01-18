@@ -45,6 +45,7 @@ class VideoController extends Controller
             $fileName = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('file')->extension();
             $filePath = $request->file('file')->storeAs('videos', $fileName, 'public');
             $fileModel->title = $request->title;
+            $fileModel->subject = $request->subject;
             $fileModel->name = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('file')->extension();
             $fileModel->location = '/storage/' . $filePath;
             $fileModel->description = $request->description;

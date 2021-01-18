@@ -44,6 +44,23 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="subject" class="block font-medium text-sm text-gray-700">Subject</label>
+                            <select type="text" id="subject" name="subject" class="form-select rounded-md shadow-sm mt-1 block w-full" value="{{ old('subject', '') }}">
+                                <option value="History">History</option>
+                                <option value="Nature">Nature</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Science">Science</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Economy">Economy</option>
+                                <option value="Culture">Culture</option>
+                                <option value="Geography">Geography</option>
+                            </select>
+                            @error('subject')
+                            <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
                             <input type="file" name="file" class="form-control">
                         </div>
                         <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
