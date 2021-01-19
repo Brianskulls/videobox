@@ -19,29 +19,29 @@ class OverviewsController extends Controller
         abort_if(Gate::denies('overviews_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $loopables = User::whereHas('roles', function($q) { //whereHas allows us to provide constraint on the role of User
-            $q->where('id','=',3);
-        })->with('videos')->get();
+            $q->where('id','=',3); //Where the role is 3 (Reporter)
+        })->with('videos')->get(); //And get all videos
 
         $type = 'reporter';
-        return view('overview.index', get_defined_vars());
+        return view('overview.index', get_defined_vars()); //$loopables is called in the view
     }
 
     public function subjects()
     {
         abort_if(Gate::denies('overviews_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        //get
         $videos = DB::table('videos')->orderBy('subject')->get();
 
         $loopables = [];
 
+        //This foreach groups all videos together per subject
         foreach($videos as $video)
         {
             $loopables[$video->subject][] = $video;
         }
-//        dd($loopables);
+
         $type = 'subject';
-        return view('overview.index', get_defined_vars());
+        return view('overview.index', get_defined_vars()); //$loopables is called in the view
     }
 
 }
