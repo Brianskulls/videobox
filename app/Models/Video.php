@@ -16,6 +16,8 @@ class Video extends Model
         'subject',
         'name',
         'location',
+        'thumb_name',
+        'thumb_location',
         'user_id'
     ];
 
