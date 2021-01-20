@@ -32,6 +32,11 @@
                                         {{ $video->description }}
                                     </td>
                                 </tr>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                        Views: {{ $video->view_count }}
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                     </div>
