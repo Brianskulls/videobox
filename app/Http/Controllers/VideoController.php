@@ -48,7 +48,7 @@ class VideoController extends Controller
         $request->validate([
         'file'      => 'bail|required|file|mimes:mp4,oog,webm|max:5242880',
         'thumbnail' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',
-    ]);
+        ]);
 
         $fileModel = new Video;
 
