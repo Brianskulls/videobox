@@ -14,10 +14,12 @@ class TaskController extends Controller
 {
     public function index()
     {
+        // Denies visit if the user does not have the correct permissions
         abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $user = Auth::user();
 
+        // Link the task to the user id so users only see their tasks
         $tasks = Task::where('user_id',$user->id)->get();
 
         return view('tasks.index', compact('tasks'));
@@ -25,6 +27,7 @@ class TaskController extends Controller
 
     public function create()
     {
+        // Denies visit if the user does not have the correct permissions
         abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('tasks.create');
@@ -43,7 +46,9 @@ class TaskController extends Controller
 
     public function show(Task $task)
     {
+        // Denies visit if the user does not have the correct permissions
         abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        // If another user tries to see the page of another task made by another user he gets denied
         abort_unless($task->user_id === Auth::user()->id, Response::HTTP_FORBIDDEN, 'You may not view this task');
 
         return view('tasks.show', compact('task'));
@@ -51,6 +56,7 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
+        // Denies visit if the user does not have the correct permissions
         abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('tasks.edit', compact('task'));
@@ -65,9 +71,9 @@ class TaskController extends Controller
 
     public function destroy(Task $task)
     {
+        // Denies visit if the user does not have the correct permissions
         abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-//        $task->unsetRelation(Auth::user());
         $task->delete();
 
         return redirect()->route('tasks.index');

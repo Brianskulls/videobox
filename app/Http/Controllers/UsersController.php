@@ -14,6 +14,7 @@ class UsersController extends Controller
 {
     public function index()
     {
+        // Denies visit if the user does not have the correct permissions
         abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $users = User::with('roles')->get();
@@ -23,6 +24,7 @@ class UsersController extends Controller
 
     public function create()
     {
+        // Denies visit if the user does not have the correct permissions
         abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $roles = Role::pluck('title', 'id');
@@ -41,6 +43,7 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
+        // Denies visit if the user does not have the correct permissions
         abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('users.show', compact('user'));
@@ -48,6 +51,7 @@ class UsersController extends Controller
 
     public function edit(User $user)
     {
+        // Denies visit if the user does not have the correct permissions
         abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $roles = Role::pluck('title', 'id');
@@ -67,6 +71,7 @@ class UsersController extends Controller
 
     public function destroy(User $user)
     {
+        // Denies visit if the user does not have the correct permissions
         abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $user->delete();
